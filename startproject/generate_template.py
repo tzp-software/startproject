@@ -9,9 +9,12 @@
 import sys
 from run_command import make_file
 
+# TemplateTypes
+main, unittest, nosetest, cls = 'main', 'unittest', 'nosetest', 'cls'
 
-def make_new_from_template(name):
-    TEMPLATE='/data/local/etc/template_main.py'
+def make_new_from_template(name, templateType=main):
+    if templateType.lower() == 'main':
+        TEMPLATE='/usr/local/etc/template_main.py'
 
     #if len(sys.argv) > 1:
     #    FILE_NAME = str(sys.argv[1])

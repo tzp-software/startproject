@@ -35,6 +35,8 @@ def print_usage():
 
 
 def main():
+    templateType = False
+
     if len(sys.argv) == 1:
         print_usage()
     else:
@@ -43,10 +45,16 @@ def main():
     if arg == '-f' or arg == '--file':
         if len(sys.argv) >= 3:
             fileName = sys.argv[2]
+            if len(sys.argv) >= 4:
+                if sys.argv[3].lower() == '-t' or sys.argv[3] == '--template-type':
+                    templateType = sys.argv[4]
         else:
             fileName = raw_input("Enter Filename: ")
-        make_new_from_template(fileName)
-        sys.exit(0)
+        if templateType:
+            make_new_from_template(fileName, templateType)
+        else:
+            make_new_from_template(fileName) # allow for second argument here for template type, optional
+        #sys.exit(0)
 
     elif arg == '-d' or arg == '--dir':
         if len(sys.argv) >= 3:
