@@ -1,0 +1,10 @@
+StartProject
+
+a command line utitlity to start a project in python,
+or to add files or directorys to existing projects in
+python. i stress python because whenever startproject 
+makes a directory it makes an __init__.py file to.
+
+
+TODO: 	add -t for template_type
+
