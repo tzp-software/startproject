@@ -11,7 +11,7 @@ from run_command import make_file
 
 
 def make_new_from_template(name):
-    TEMPLATE='/Users/kyleroux/Library/Templates/template_main.py'
+    TEMPLATE='/data/local/etc/template_main.py'
 
     #if len(sys.argv) > 1:
     #    FILE_NAME = str(sys.argv[1])

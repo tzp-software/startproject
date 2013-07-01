@@ -3,6 +3,7 @@
 '''
 import os
 import sys
+import commands
 from run_command import run_command, make_file, make_dir
 from generate_template import make_init_py, make_new_from_template
 from init_git import init_git
@@ -52,12 +53,16 @@ def main():
             dirName = sys.argv[2]
         else:
             dirName = raw_input("Enter Dir name: ")
-        make_dir(dirName)
-        os.chdir(dirName)
-        make_init_py()
-        os.chdir('../')
-        print 'made directory: {0}'.format(dirName)
-        sys.exit(0)
+	try:
+       	    make_dir(dirName)
+            os.chdir(dirName)
+            make_init_py()
+            os.chdir('../')
+            print 'made directory: {0}'.format(dirName)
+        except:
+	    print 'Im in {}'.format(commands.getoutput('pwd'))
+	    os.rmdir(dirName)
+	    sys.exit(0)
 
     elif arg == '-n' or arg == '--new':
         if len(sys.argv) < 3:
