@@ -9,6 +9,7 @@ from generate_template import make_init_py, make_new_from_template
 from init_git import init_git
 from startproject import make_project
 
+
 def print_usage():
     USAGE = '''
     usage: startproject [-f <file>] [-d <dir>] [-n <newname>]
